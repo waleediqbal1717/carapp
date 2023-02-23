@@ -12,11 +12,12 @@ import com.facebook.soloader.SoLoader;
 import com.carapp.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
-public class MainApplication extends Application implements ReactApplication {
+import com.reactnativenavigation.NavigationApplication;
+import com.reactnativenavigation.react.NavigationReactNativeHost;
+public class MainApplication extends Application implements NavigationApplication {
 
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
+      new NavigationReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
@@ -54,7 +55,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
-    SoLoader.init(this, /* native exopackage */ false);
+    // SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
