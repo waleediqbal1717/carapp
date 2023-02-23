@@ -39,7 +39,7 @@ git clone the project form repo on Github, open the terminal.
     use pwd to make sure and result will be /home/your_pc_name
     in linux, open the .bashrc using vim .bash
     paste the following lines:
-        export ANDROID_HOME=$HOME/Android/Sdk
+    export ANDROID_HOME=$HOME/Android/Sdk
         export PATH=$PATH:$ANDROID_HOME/tools
         export PATH=$PATH:$ANDROID_HOME/platform-tools
     save the changes:\
@@ -53,5 +53,5 @@ close Terminal, sometimes its need to restart the your computer to ensure that c
 
 > either open the application by terminal or Vscode\
 > open terminal and type\
-> `npm run android` -- FOR ANDROID VERSION\
-> `npm run ios` -- FOR iOS VERSION\
+> `npx react-native run-android` -- FOR ANDROID VERSION\
+> `npx react-native run-ios` -- FOR iOS VERSION\
