@@ -7,8 +7,6 @@ export const CAR_SCREEN = "CarScreen";
 export const ADD_CAR_SCREEN = "AddCarScreen";
 export const ALL_CAR_SCREEN = "AllCarScreen";
 
-export const SIGNUP_SCREEN = "RegisterProfile";
-
 // nav IDS
 
 export const AUTH_NAV_ID = "AuthStack";

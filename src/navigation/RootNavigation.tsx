@@ -5,7 +5,6 @@ import {
   SIGIN_SCREEN,
   HOME_SCREEN,
   HOME_NAV,
-  SIGNUP_SCREEN,
   SPLASH_SCREEN,
   CAR_DETAIL_SCREEN,
   CAR_SCREEN,
@@ -18,12 +17,11 @@ import Home from "../screens/Home";
 import CarDetail from "../screens/CarDetail";
 import CarScreen from "../screens/CarScreen";
 import AddCarScreen from "../screens/AddCar";
-import RegisterProfile from "../screens/RegisterProfile";
 import SignIn from "../screens/SignIn";
 import SplashScreen from "../screens/Splash";
 import AllCars from "../screens/AllCars";
 import Login from "../screens/Login";
-Navigation.registerComponent(SIGNUP_SCREEN, () => RegisterProfile);
+import { CAR_TYPE } from "../managers/types/car";
 Navigation.registerComponent(SPLASH_SCREEN, () => SplashScreen);
 Navigation.registerComponent(HOME_SCREEN, () => Home);
 Navigation.registerComponent(CAR_DETAIL_SCREEN, () => CarDetail);
@@ -64,31 +62,6 @@ export const goToSignin = () =>
     },
   });
 
-Home.options = {
-  topBar: {
-    visible: false,
-  },
-  bottomTab: {
-    visible: false,
-  },
-  animations: {
-    push: {
-      waitForRender: true,
-    },
-  },
-};
-
-CarScreen.options = {
-  bottomTabs: {
-    visible: false,
-  },
-};
-
-AllCars.options = {
-  bottomTabs: {
-    visible: false,
-  },
-};
 export const goToHome = () => {
   Navigation.setRoot({
     root: {
@@ -110,27 +83,6 @@ export const goToHome = () => {
     },
   });
 };
-export const register_profile = (mobile: string) => ({
-  component: {
-    name: SIGNUP_SCREEN,
-    options: {
-      topBar: {
-        visible: false,
-      },
-      bottomTabs: {
-        visible: false,
-      },
-      animations: {
-        push: {
-          waitForRender: true,
-        },
-      },
-    },
-    passProps: {
-      mobile,
-    },
-  },
-});
 export const add_car = {
   component: {
     name: ADD_CAR_SCREEN,
@@ -149,3 +101,46 @@ export const add_car = {
     },
   },
 };
+export const all_cars = (make: string) => ({
+  component: {
+    name: ALL_CAR_SCREEN,
+    options: {
+      topBar: {
+        visible: false,
+      },
+      bottomTabs: {
+        visible: false,
+      },
+      animations: {
+        push: {
+          waitForRender: true,
+        },
+      },
+    },
+    passProps: {
+      make,
+    },
+  },
+});
+
+export const car_screen = (car: CAR_TYPE) => ({
+  component: {
+    name: CAR_SCREEN,
+    options: {
+      topBar: {
+        visible: false,
+      },
+      bottomTabs: {
+        visible: false,
+      },
+      animations: {
+        push: {
+          waitForRender: true,
+        },
+      },
+    },
+    passProps: {
+      car,
+    },
+  },
+});
