@@ -1,10 +1,12 @@
 export type CAR_TYPE = {
-  car_name?: string;
+  _id?: string;
+  name?: string;
   model?: string;
   make?: string;
-  registeration_number?: string;
+  registration_no?: string;
   color?: string;
-  catrgory?: string;
+  category?: string;
+  year?: number;
 };
 export type DROPDOWN_TYPE = {
   value: string;

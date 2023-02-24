@@ -1,12 +1,13 @@
 import { action, makeObservable, observable } from "mobx";
 import { persist } from "mobx-persist";
 import React from "react";
-import CarScreen from "../../screens/CarScreen";
 import { CAR_TYPE, DROPDOWN_TYPE } from "../types/car";
 import cars from "../cars.json";
+import { Navigation } from "react-native-navigation";
 class CarManager {
   @persist("object") @observable car: CAR_TYPE = {};
   @persist("list") @observable registeredCarsList: Array<CAR_TYPE> = cars;
+  @observable specificMakeCarsList: Array<CAR_TYPE> = cars;
   @persist("list") @observable categoriesList: Array<DROPDOWN_TYPE> = [
     { value: "Sedan", label: "Sedan" },
     { value: "SUV", label: "SUV" },
@@ -66,23 +67,66 @@ class CarManager {
     return count;
   }
   @action.bound
+  filterSpecificMakeCar(make: string): void {
+    this.specificMakeCarsList = this.registeredCarsList.filter(
+      (item) => item.make === make
+    );
+  }
+  @action.bound
   attemptToAddCar(car: CAR_TYPE): string {
-    if (!car.catrgory) {
+    if (!car.category) {
       return "Select category";
-    } else if (car.car_name.trim() === "") {
+    } else if (car.name.trim() === "") {
       return "Enter car name";
-    } else if (car.registeration_number.trim() === "") {
+    } else if (car.registration_no.trim() === "") {
       return "Enter car registration number";
     } else if (car.color.trim() === "") {
       return "Enter car color";
     } else if (!car.make) {
       return "Enter car make";
-    } else if (!car.model) {
+    } else if (!car.year) {
       return "Enter car model year";
     } else {
+      const id = this.registeredCarsList.length + 1;
+      car._id = id.toString();
       this.registeredCarsList.push(car);
       return "Success";
     }
+  }
+  @action.bound
+  attemptToUpdateCar(car: CAR_TYPE): string {
+    if (!car.category) {
+      return "Select category";
+    } else if (car.name.trim() === "") {
+      return "Enter car name";
+    } else if (car.registration_no.trim() === "") {
+      return "Enter car registration number";
+    } else if (car.color.trim() === "") {
+      return "Enter car color";
+    } else if (!car.make) {
+      return "Enter car make";
+    } else if (!car.year) {
+      return "Enter car model year";
+    } else {
+      const index = this.registeredCarsList.findIndex(
+        (item) => item._id === car._id
+      );
+      console.log(this.registeredCarsList[index]);
+      if (index !== -1) {
+        this.registeredCarsList[index] = car;
+        this.filterSpecificMakeCar(car.make);
+        Navigation.pop(HOME_NAV);
+        return "Success";
+      }
+      return "";
+    }
+  }
+  @action.bound
+  deleteCar(id: string, make: string) {
+    this.registeredCarsList = this.registeredCarsList.filter(
+      (item) => item._id !== id
+    );
+    this.filterSpecificMakeCar(make);
   }
 }
 export const carmanager = new CarManager();

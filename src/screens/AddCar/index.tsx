@@ -177,12 +177,12 @@ const AddCar = observer(() => {
         style={styles.addCarButton}
         onPress={() => {
           const car: CAR_TYPE = {
-            car_name: carName,
-            model: selectedYear,
+            name: carName,
+            year: parseInt(selectedYear),
             make: selectedMake,
-            registeration_number: carRegistrationNumber,
+            registration_no: carRegistrationNumber,
             color: carColor,
-            catrgory: selectedCategory,
+            category: selectedCategory,
           };
           const message = carmanager.attemptToAddCar(car);
           if (message === "Success") {
