@@ -14,7 +14,11 @@ import styles from "./styles";
 import { usermanager } from "../../managers/UserManager";
 import theme from "../../theme";
 import { carmanager } from "../../managers/CarManager";
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import {
+  responsiveFontSize,
+  responsiveHeight,
+} from "react-native-responsive-dimensions";
+import Entypo from "react-native-vector-icons/Entypo";
 import { add_car, HOME_NAV } from "../../navigation";
 
 const Home = observer(() => {
@@ -33,6 +37,19 @@ const Home = observer(() => {
 
   return (
     <SafeAreaView style={styles.Container}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={theme.colors.secondary}
+      />
+      <View style={styles.Header}>
+        <Text style={styles.Title}>Home</Text>
+        <Entypo
+          onPress={usermanager.attemptToLogout}
+          name="log-out"
+          color={theme.colors.background}
+          size={responsiveFontSize(3)}
+        />
+      </View>
       <Text style={styles.title}>
         Total Registered Cars: {carmanager.registeredCarsList.length}
       </Text>

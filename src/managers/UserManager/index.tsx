@@ -22,7 +22,7 @@ class UserManager {
     this.loginOption = option;
   }
   @action.bound
-  removeUser() {
+  attemptToLogout() {
     this.loggedIn = false;
     this.user = {};
     goToSignin();

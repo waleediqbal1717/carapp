@@ -30,6 +30,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
+  Header: {
+    height: responsiveHeight(8),
+    width: responsiveWidth(100),
+    backgroundColor: theme.colors.secondary,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: "5%",
+  },
+  Title: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: responsiveFontSize(2),
+  },
   buttonText: {
     color: theme.colors.background,
     fontSize: responsiveFontSize(2),
