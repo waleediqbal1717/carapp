@@ -131,7 +131,7 @@ export const register_profile = (mobile: string) => ({
     },
   },
 });
-export const add_car = (mobile: string) => ({
+export const add_car = {
   component: {
     name: ADD_CAR_SCREEN,
     options: {
@@ -147,8 +147,5 @@ export const add_car = (mobile: string) => ({
         },
       },
     },
-    passProps: {
-      mobile,
-    },
   },
-});
+};

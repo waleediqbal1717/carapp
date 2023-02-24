@@ -15,7 +15,7 @@ import { usermanager } from "../../managers/UserManager";
 import theme from "../../theme";
 import { carmanager } from "../../managers/CarManager";
 import { responsiveHeight } from "react-native-responsive-dimensions";
-import { HOME_NAV } from "../../navigation";
+import { add_car, HOME_NAV } from "../../navigation";
 
 const Home = observer(() => {
   const renderItems = ({ item, index }) => {
@@ -50,7 +50,7 @@ const Home = observer(() => {
       />
       <TouchableOpacity
         style={styles.addCarButton}
-        onPress={() => Navigation.push(HOME_NAV, add - c)}
+        onPress={() => Navigation.push(HOME_NAV, add_car)}
       >
         <Text style={styles.buttonText}>Add Car</Text>
       </TouchableOpacity>
