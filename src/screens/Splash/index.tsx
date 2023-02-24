@@ -35,12 +35,12 @@ const SplashScreen = observer(() => {
       <StatusBar
         animated={true}
         barStyle="dark-content"
-        backgroundColor={theme.colors.primary}
+        backgroundColor={theme.colors.background}
       />
 
       <Text style={styles.title}>Car App</Text>
       <ActivityIndicator
-        size="small"
+        size="large"
         color={theme.colors.secondary}
         style={{ marginTop: 20, alignSelf: "center" }}
       />
