@@ -3,18 +3,18 @@ package com.carapp;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
-import com.facebook.react.ReactApplication;
+import com.reactnativenavigation.NavigationApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
+import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 import com.carapp.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import com.reactnativenavigation.NavigationApplication;
-import com.reactnativenavigation.react.NavigationReactNativeHost;
-public class MainApplication extends Application implements NavigationApplication {
+
+public class MainApplication extends NavigationApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new NavigationReactNativeHost(this) {
@@ -55,7 +55,7 @@ public class MainApplication extends Application implements NavigationApplicatio
     super.onCreate();
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
-    // SoLoader.init(this, /* native exopackage */ false);
+    
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 

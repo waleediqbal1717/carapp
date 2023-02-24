@@ -1,0 +1,100 @@
+[
+  {
+    "model": "Civic",
+    "name": "Honda Civic",
+    "year": 2022,
+    "category": "Sedan",
+    "make": "Honda",
+    "registration_no": "AB1234CD",
+    "color": "Black"
+  },
+  {
+    "model": "Corolla",
+    "name": "Toyota Corolla",
+    "year": 2021,
+    "category": "Sedan",
+    "make": "Toyota",
+    "registration_no": "EF5678GH",
+    "color": "White"
+  },
+  {
+    "model": "Camry",
+    "name": "Toyota Camry",
+    "year": 2022,
+    "category": "Sedan",
+    "make": "Toyota",
+    "registration_no": "IJ9012KL",
+    "color": "Silver"
+  },
+  {
+    "model": "Accord",
+    "name": "Honda Accord",
+    "year": 2021,
+    "category": "Sedan",
+    "make": "Honda",
+    "registration_no": "MN3456OP",
+    "color": "Blue"
+  },
+  {
+    "model": "Mazda3",
+    "name": "Mazda Mazda3",
+    "year": 2022,
+    "category": "Sedan",
+    "make": "Mazda",
+    "registration_no": "QR7890ST",
+    "color": "Red"
+  },
+  {
+    "model": "X5",
+    "name": "BMW X5",
+    "year": 2021,
+    "category": "SUV",
+    "make": "BMW",
+    "registration_no": "UV1234WX",
+    "color": "Black"
+  },
+  {
+    "model": "Rav4",
+    "name": "Toyota RAV4",
+    "year": 2022,
+    "category": "SUV",
+    "make": "Toyota",
+    "registration_no": "YZ5678AB",
+    "color": "White"
+  },
+  {
+    "model": "CR-V",
+    "name": "Honda CR-V",
+    "year": 2021,
+    "category": "SUV",
+    "make": "Honda",
+    "registration_no": "CD9012EF",
+    "color": "Silver"
+  },
+  {
+    "model": "Highlander",
+    "name": "Toyota Highlander",
+    "year": 2022,
+    "category": "SUV",
+    "make": "Toyota",
+    "registration_no": "GH3456IJ",
+    "color": "Blue"
+  },
+  {
+    "model": "CX-5",
+    "name": "Mazda CX-5",
+    "year": 2021,
+    "category": "SUV",
+    "make": "Mazda",
+    "registration_no": "KL7890MN",
+    "color": "Red"
+  },
+  {
+    "model": "Civic Type R",
+    "name": "Honda Civic Type R",
+    "year": 2022,
+    "category": "Sports Car",
+    "make": "Honda",
+    "registration_no": "OP1234QR",
+    "color": "Black"
+  }]
