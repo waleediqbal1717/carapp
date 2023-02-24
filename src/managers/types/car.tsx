@@ -6,3 +6,7 @@ export type CAR_TYPE = {
   color?: string;
   catrgory?: string;
 };
+export type DROPDOWN_TYPE = {
+  value: string;
+  label: string;
+};
