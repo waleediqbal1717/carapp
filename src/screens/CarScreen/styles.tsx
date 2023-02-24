@@ -1,316 +1,124 @@
-import theme from '../../theme';
-import {StyleSheet, Dimensions, Platform, StatusBar} from 'react-native';
+import theme from "../../theme";
+import { StyleSheet } from "react-native";
 import {
   responsiveFontSize,
   responsiveHeight,
   responsiveWidth,
-} from 'react-native-responsive-dimensions';
-const windowHeight = Dimensions.get('window').height;
-const STATUSBAR_HEIGHT = StatusBar.currentHeight;
-const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
-
+} from "react-native-responsive-dimensions";
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: theme.colors.containerBackground,
+    backgroundColor: theme.colors.background,
   },
   Status: {
-    backgroundColor: '#E5E5E5',
+    backgroundColor: theme.colors.primary,
   },
-  Body: {
-    width: responsiveWidth(90),
-    alignSelf: 'center',
-  },
-  BackButton: {
-    left: 15,
-  },
+
   Header: {
-    height: 60,
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#E5E5E5',
-    elevation: 5,
-  },
-  HeaderText: {
-    fontSize: responsiveFontSize(3.5),
-    color: theme.colors.primary,
-  },
-  ArrowBack: {
-    height: 24,
-    width: 24,
-  },
-  CarBox: {
-    height: '100%',
-    width: 176,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 10,
-  },
-  CarImage: {
-    height: 350,
-    width: '100%',
-  },
-  DescriptionBox: {
-    marginTop: 20,
-    paddingHorizontal: 25,
-  },
-  DescriptionText: {
-    fontSize: responsiveFontSize(2),
-    lineHeight: 32,
-    padding: 10,
-    fontFamily: 'Inter-Regular',
-  },
-  dcontainer1: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  dcontainer2: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginTop: 20,
-  },
-  dbox: {
-    width: '30%',
     height: responsiveHeight(8),
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: responsiveWidth(100),
+    backgroundColor: theme.colors.secondary,
+    flexDirection: "row",
+    alignItems: "center",
   },
-  dboxImg: {
-    resizeMode: 'contain',
-    width: '40%',
-    height: '40%',
-  },
-  dboxText: {
-    marginTop: 5,
+  Title: {
+    color: "#fff",
+    marginLeft: "3%",
+    fontWeight: "bold",
     fontSize: responsiveFontSize(2),
-    color: theme.colors.textColor,
-    textTransform: 'capitalize',
-    alignSelf: 'center',
-    lineHeight: 20,
+  },
+
+  NameInput: {
+    width: "100%",
+    height: responsiveHeight(6),
+    borderRadius: 6,
+    alignItems: "center",
+    flexDirection: "row",
+    fontFamily: "Inter-Regular",
+    backgroundColor: "rgba(196, 196, 196, 0.2)",
+    paddingHorizontal: 5,
+  },
+  Form: {
+    width: "95%",
+    alignSelf: "center",
+  },
+  FormTitle: {
+    flexDirection: "row",
+    marginTop: 15,
+    width: "100%",
+  },
+  FormTitle1: {
+    flexDirection: "row",
+    marginTop: 7,
+    width: "100%",
+    justifyContent: "space-between",
+  },
+  FormTextLeft: {
+    fontSize: responsiveFontSize(2),
+    width: "58%",
+    fontWeight: "600",
+    color: theme.colors.secondary,
+  },
+  FormTextEmail: {
+    fontSize: responsiveFontSize(2),
+    fontWeight: "600",
+  },
+  FormTextRight: {
+    fontSize: responsiveFontSize(2),
+    width: "46%",
+    left: -15,
+    fontWeight: "600",
+    color: theme.colors.secondary,
+  },
+  dropDownContainer: {
+    backgroundColor: theme.colors.background,
+    borderColor: theme.colors.dark,
+  },
+  dropDownPlaceHolder: {
+    color: theme.colors.strokeGrey,
+  },
+  dropDown: {
+    backgroundColor: "rgba(196, 196, 196, 0.2)",
+    borderColor: theme.colors.dark,
+    borderWidth: 0,
+  },
+  dropDownText: {
+    color: theme.colors.dark,
   },
   Input: {
-    backgroundColor: theme.colors.containerBackground,
-    width: responsiveWidth(90),
-    marginTop: 20,
+    width: "100%",
     height: responsiveHeight(6),
-    alignItems: 'center',
-    flexDirection: 'row',
-    fontSize: responsiveFontSize(2),
-    fontFamily: 'Inter-Regular',
-    justifyContent: 'space-between',
-    alignSelf: 'center',
-  },
-  BodyTitle: {
-    fontSize: responsiveFontSize(2.5),
-    color: theme.colors.textSubtitleColor,
-    fontFamily: 'Inter-Bold',
-  },
-  ModalBody: {
-    width: responsiveWidth(90),
-    alignSelf: 'center',
-  },
-
-  ModalHeader: {
-    alignSelf: 'center',
-    height: 30,
-    fontSize: 24,
-    color: '#fff',
-    marginTop: 20,
-    fontFamily: 'Inter-Regular',
-  },
-  ModalSplit: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#5299D3',
-    width: '100%',
-    height: 20,
-  },
-  ModalView: {
-    width: 140,
-    height: 35,
+    borderRadius: 6,
+    backgroundColor: "rgba(196, 196, 196, 0.2)",
     paddingHorizontal: 5,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 15,
-    marginTop: 10,
-    borderWidth: 0.5,
-    borderColor: theme.colors.textSubtitleColor,
   },
-  Features: {
-    color: theme.colors.textColor,
+  TextInput: {
+    height: "100%",
+    width: "100%",
+    color: theme.colors.dark,
+    fontSize: responsiveFontSize(1.8),
+  },
+
+  errorMessage: {
+    color: "red",
     fontSize: responsiveFontSize(1.6),
-    fontFamily: 'Inter-Regular',
+    alignSelf: "center",
   },
-  Dots: {
-    height: 15,
-    width: 15,
-    backgroundColor: theme.colors.primary,
-    opacity: 0.6,
-    marginLeft: 5,
-    borderRadius: 10,
-  },
-  ActiveDotOuter: {
-    height: 20,
-    width: 20,
-    backgroundColor: theme.colors.primary,
-    borderRadius: 10,
-    justifyContent: 'center',
-  },
-  ActiveDotInner: {
-    borderWidth: 1,
-    borderColor: '#fff',
-    height: 17,
-    width: 17,
-    borderRadius: 10,
-    alignSelf: 'center',
-  },
-  BottomButtons: {
-    flexDirection: 'row',
-    width: '100%',
-    height: 60,
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  ButtonLeft: {
-    width: '45%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: responsiveHeight(6),
-    backgroundColor: theme.colors.primary,
-    opacity: 0.6,
-    marginRight: '5%',
-    borderRadius: 4,
-  },
-  ButtonRight: {
-    width: '45%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: responsiveHeight(6),
-    backgroundColor: theme.colors.primary,
-    marginLeft: '5%',
-    borderRadius: 4,
-  },
-  ButtonText: {
-    color: '#fff',
+  buttonText: {
+    color: theme.colors.background,
     fontSize: responsiveFontSize(2),
-    fontFamily: 'Inter-Regular',
+    textAlign: "center",
+    fontWeight: "bold",
   },
-  Info: {
-    height: 90,
-    width: '100%',
-    borderColor: theme.colors.primary,
-    borderWidth: 1,
-    marginTop: 20,
-    marginBottom: 20,
-    flexDirection: 'row',
-  },
-  Image: {
-    height: 56,
-    width: 56,
-  },
-  LeftBox: {
-    width: '30%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  RightBox: {
-    width: '70%',
-    height: '100%',
-    justifyContent: 'center',
-  },
-  RatingText: {
-    fontSize: 12,
-    fontFamily: 'Inter-Regular',
-    color: '#000',
-    marginLeft: 5,
-  },
-  BookNowButton: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: responsiveHeight(6),
-    backgroundColor: theme.colors.primary,
-    borderRadius: 4,
-    marginBottom: 20,
-    alignSelf: 'center',
-    marginTop: 20,
-  },
-  Row: {
-    flexDirection: 'row',
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  InfoLeft: {
-    width: '50%',
-    fontFamily: 'Inter-Bold',
-    color: theme.colors.primary,
-    paddingLeft: 10,
-    fontSize: responsiveFontSize(1.8),
-  },
-  InfoRight: {
-    width: '50%',
-    fontFamily: 'Inter-Regular',
-    color: '#000',
-    paddingRight: 10,
-    textAlign: 'right',
-    fontSize: responsiveFontSize(1.8),
-  },
-
-  fullImageModalCross: {
-    backgroundColor: 'black',
-    borderRadius: 20,
-    width: 40,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: Platform.OS == 'ios' ? APPBAR_HEIGHT + 12 : 12,
-    left: 12,
-  },
-  bottom: {
-    width: responsiveWidth(90),
-    alignSelf: 'center',
-    marginBottom: responsiveHeight(3),
-    marginTop: responsiveHeight(1.5),
-    elevation: 5,
-  },
-  bottomText: {
-    color: '#F05123',
-    fontSize: responsiveFontSize(1.9),
-    fontFamily: 'Inter-Regular',
-    fontWeight: '700',
-    textAlign: 'center',
-    lineHeight: 22,
-  },
-  BottomButton: {
-    backgroundColor: theme.colors.disableColor,
+  addCarButton: {
+    height: responsiveHeight(7),
+    width: responsiveWidth(95),
+    alignSelf: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: theme.colors.secondary,
     borderRadius: 10,
-    height: responsiveHeight(6),
-    justifyContent: 'center',
-    width: responsiveWidth(90),
-    alignSelf: 'center',
-    fontFamily: 'Inter-Regular',
-
-    alignItems: 'center',
-  },
-  buttonTextBottom: {
-    color: '#fff',
-    fontSize: responsiveFontSize(2),
-    fontFamily: 'Inter-Bold',
-    textTransform: 'capitalize',
-  },
-  LinearGradient: {
-    height: '100%',
-    width: '100%',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: responsiveHeight(3),
   },
 });
 
