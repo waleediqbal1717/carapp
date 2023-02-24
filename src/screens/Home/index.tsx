@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StatusBar,
-  RefreshControl,
   TouchableOpacity,
   SafeAreaView,
   FlatList,
@@ -19,19 +18,26 @@ import {
   responsiveHeight,
 } from "react-native-responsive-dimensions";
 import Entypo from "react-native-vector-icons/Entypo";
-import { add_car, HOME_NAV } from "../../navigation";
+import { add_car, all_cars, HOME_NAV } from "../../navigation";
 
 const Home = observer(() => {
   const renderItems = ({ item, index }) => {
     return (
-      <View style={styles.CarBox}>
+      <TouchableOpacity
+        style={styles.CarBox}
+        onPress={() => {
+          carmanager.filterSpecificMakeCar(item.make);
+
+          Navigation.push(HOME_NAV, all_cars(item.make));
+        }}
+      >
         <Text numberOfLines={1} ellipsizeMode="tail" style={styles.makeTitle}>
           {item.make}
         </Text>
         <Text numberOfLines={1} ellipsizeMode="tail" style={styles.countTitle}>
           ({carmanager.getMakeCount(item.make)})
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   };
 
