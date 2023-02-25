@@ -4,6 +4,7 @@ import React from "react";
 import { CAR_TYPE, DROPDOWN_TYPE } from "../types/car";
 import cars from "../cars.json";
 import { Navigation } from "react-native-navigation";
+import { HOME_NAV } from "../../navigation";
 class CarManager {
   @persist("object") @observable car: CAR_TYPE = {};
   @persist("list") @observable registeredCarsList: Array<CAR_TYPE> = cars;
@@ -111,7 +112,6 @@ class CarManager {
       const index = this.registeredCarsList.findIndex(
         (item) => item._id === car._id
       );
-      console.log(this.registeredCarsList[index]);
       if (index !== -1) {
         this.registeredCarsList[index] = car;
         this.filterSpecificMakeCar(car.make);
