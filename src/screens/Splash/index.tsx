@@ -1,13 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  StatusBar,
-  Image,
-  ActivityIndicator,
-  View,
-  Platform,
-  Text,
-  AppState,
-} from "react-native";
+import { StatusBar, ActivityIndicator, View, Text } from "react-native";
 import { observer } from "mobx-react";
 import styles from "./styles";
 import { goToHome, goToSignin } from "../../navigation";
