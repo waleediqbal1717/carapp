@@ -2,25 +2,21 @@ import React, { useRef, useState } from "react";
 import {
   View,
   SafeAreaView,
-  StatusBar,
   Image,
   TouchableOpacity,
   Text,
   TextInput,
   ScrollView,
   ActivityIndicator,
-  Alert,
 } from "react-native";
 import { observer } from "mobx-react-lite";
 import styles from "./styles";
 import theme from "../../theme";
 import Feather from "react-native-vector-icons/Feather";
-import { Navigation } from "react-native-navigation";
 import PhoneInput from "react-native-phone-input";
 import {
   responsiveFontSize,
   responsiveHeight,
-  responsiveWidth,
 } from "react-native-responsive-dimensions";
 import { usermanager } from "../../managers/UserManager";
 import { logo } from "../../assets";

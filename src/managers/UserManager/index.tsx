@@ -1,10 +1,7 @@
 import { action, makeObservable, observable } from "mobx";
 import { persist } from "mobx-persist";
 import React from "react";
-import { Alert } from "react-native";
-import { goToHome, goToSignin } from "../../navigation";
-
-import { carmanager } from "../CarManager";
+import { goToSignin } from "../../navigation";
 import { USER_TYPE } from "../types/user";
 
 class UserManager {
